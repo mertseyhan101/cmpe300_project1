@@ -1,0 +1,12 @@
+loglog slope best time 100->400: 1.00   count best4: 1.20
+loglog slope worst time 100->400: 2.80   count worst4: 2.99
+loglog slope average time 100->400: 2.08   count average4: 2.01
+group 1: time/count over 132 timed inputs n>=40: min 343.5 ns  max 1069480.8 ns  max/min 3113.4  CV 4.25
+group 2: time/count over 132 timed inputs n>=40: min 176.8 ns  max 15962.4 ns  max/min 90.3  CV 2.00
+group 3: time/count over 132 timed inputs n>=40: min 395.0 ns  max 15883.4 ns  max/min 40.2  CV 0.78
+group 4: time/count over 132 timed inputs n>=40: min 31.2 ns  max 86.0 ns  max/min 2.8  CV 0.31
+average runs n=100: min 2.662e-04 max 7.578e-04 max/min 2.85
+average runs n=400: min 6.189e-03 max 1.099e-02 max/min 1.78
+n=100 worst/average time 30.5   W4/A4 19.8
+n=200 worst/average time 59.1   W4/A4 39.0
+n=400 worst/average time 83.6   W4/A4 77.4

@@ -1,0 +1,9 @@
+python: CPython 3.14.3
+os: macOS-15.5-arm64-arm-64bit-Mach-O
+cpu: Apple M1
+cores: 8
+memory_bytes: 17179869184
+model: MacBookAir10,1
+timer: time.perf_counter() (monotonic, resolution 4.166666666666666e-08 s)
+min_timed_seconds_per_run: 0.02
+random_seed: 1517401391

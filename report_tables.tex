@@ -1,0 +1,196 @@
+% =====================================================================
+% CMPE 300 - Project 1: Report Table Templates
+%
+% Instructions to students:
+%   * These tables are provided only to present your final data in a
+%     uniform way. Filling them in does NOT complete the project: you
+%     must still write your full report (exact derivations, best-case
+%     and worst-case inputs with proofs, identification of the basic
+%     operation, exact count verification, graphs and comments).
+%   * Copy the tables below into your report (Table 1 under
+%     "Theoretical Analysis", Table 2 under "Real Execution", Tables 3
+%     and 4 under "Exact Count Verification") or keep this file and
+%     \input it. Do NOT change the layout, row order or
+%     column order of the tables; only fill in the empty cells.
+%   * Table 1 must be given for YOUR variant's parameters (not for
+%     general p_a, p_b, p_c, d).
+%   * Tables 3 and 4: the counted values come from the counters of
+%     your own program (not used while measuring the times).
+%   * All times in Table 2 must be in seconds and must come from the
+%     best-case / worst-case inputs of the basic operation you
+%     identified as the "correct" one in Section 4.
+% =====================================================================
+\documentclass[11pt]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array,longtable,multirow}
+
+% Empty cell that stays visible and gives room to write
+\newcommand{\fillcell}{\rule{0pt}{2.2em}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+
+\section*{Variant}
+\begin{center}
+\begin{tabular}{|C{2.2cm}|C{2.2cm}|C{2.2cm}|C{2.2cm}|C{2.2cm}|}
+\hline
+\textbf{key} & $\boldsymbol{p_a}$ & $\boldsymbol{p_b}$ & $\boldsymbol{p_c}$ & $\boldsymbol{d}$ \\ \hline
+\fillcell & \fillcell & \fillcell & \fillcell & \fillcell \\ \hline
+\end{tabular}
+\end{center}
+
+% ---------------------------------------------------------------------
+% TABLE 1: Theoretical results (12 analyses)
+% ---------------------------------------------------------------------
+\section*{Table 1: Theoretical Analysis Results}
+
+For each basic-operation set, give the \emph{exact} closed-form count
+(floors, ceilings and $\log_d$ allowed; no summations), and the
+asymptotic class. The proofs and the
+derivation of $A(n)$ (random variables, expectations, treatment of
+$s$) go into the corresponding subsections of your report; this table
+only collects the final results.
+
+\begin{longtable}{|C{2.3cm}|C{1.5cm}|p{7.2cm}|C{3.0cm}|}
+\hline
+\textbf{Basic operation} & \textbf{Case} & \centering\arraybackslash\textbf{Exact count (closed form)} & \textbf{Asymptotic} \\ \hline
+\endhead
+\hline
+\endfoot
+
+% --- Case 1 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (1)\\comparisons}}
+ & $B_1(n)$ & \fillcell & \\ \cline{2-4}
+ & $W_1(n)$ & \fillcell & \\ \cline{2-4}
+ & $A_1(n)$ & \fillcell & \\ \hline
+% --- Case 2 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (2)\\loop increments}}
+ & $B_2(n)$ & \fillcell & \\ \cline{2-4}
+ & $W_2(n)$ & \fillcell & \\ \cline{2-4}
+ & $A_2(n)$ & \fillcell & \\ \hline
+% --- Case 3 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (3)\\assignments}}
+ & $B_3(n)$ & \fillcell & \\ \cline{2-4}
+ & $W_3(n)$ & \fillcell & \\ \cline{2-4}
+ & $A_3(n)$ & \fillcell & \\ \hline
+% --- Case 4 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (4)\\assignments}}
+ & $B_4(n)$ & \fillcell & \\ \cline{2-4}
+ & $W_4(n)$ & \fillcell & \\ \cline{2-4}
+ & $A_4(n)$ & \fillcell & \\ \hline
+\end{longtable}
+
+% ---------------------------------------------------------------------
+% TABLE 2: Real execution times
+% ---------------------------------------------------------------------
+\newpage
+\section*{Table 2: Real Execution Times}
+
+Basic operation identified as the ``correct'' one: \underline{\hspace{5cm}}\\[0.4em]
+Programming language / machine: \underline{\hspace{5cm}}
+
+\begin{center}
+\begin{tabular}{|C{1.6cm}|C{3.4cm}|C{3.4cm}|C{3.8cm}|}
+\hline
+$n$ & \textbf{Best (s)} & \textbf{Worst (s)} & \textbf{Average (s)} \\ \hline
+1   & \fillcell & & \\ \hline
+5   & \fillcell & & \\ \hline
+10  & \fillcell & & \\ \hline
+20  & \fillcell & & \\ \hline
+40  & \fillcell & & \\ \hline
+50  & \fillcell & & \\ \hline
+60  & \fillcell & & \\ \hline
+80  & \fillcell & & \\ \hline
+100 & \fillcell & & \\ \hline
+150 & \fillcell & & \\ \hline
+200 & \fillcell & & \\ \hline
+250 & \fillcell & & \\ \hline
+300 & \fillcell & & \\ \hline
+350 & \fillcell & & \\ \hline
+400 & \fillcell & & \\ \hline
+\end{tabular}
+\end{center}
+
+% ---------------------------------------------------------------------
+% TABLE 3: Exact count verification, best and worst case
+% ---------------------------------------------------------------------
+\newpage
+\newcommand{\fillrow}{\rule{0pt}{1.7em}}
+\section*{Table 3: Exact Count Verification (Best and Worst Case)}
+
+For each case (1)--(4) and each $n$ below, run your algorithm on your
+best-case and worst-case inputs and enter the counted values together
+with the values given by your $B(n)$ and $W(n)$ formulas. They are expected
+to be equal. If a counted value does not match your formula, report it anyway
+and explain the reason in your report.
+
+\begin{longtable}{|C{2.3cm}|C{1.2cm}|C{2.6cm}|C{2.6cm}|C{2.6cm}|C{2.6cm}|}
+\hline
+\textbf{Basic operation} & $\boldsymbol{n}$ & \textbf{Counted best} & \textbf{Formula $B(n)$} & \textbf{Counted worst} & \textbf{Formula $W(n)$} \\ \hline
+\endhead
+\hline
+\endfoot
+\multirow{6}{*}{\parbox{2.3cm}{\centering (1)\\comparisons}} & 1 & \fillrow &  &  &  \\ \cline{2-6}
+ & 5 & \fillrow &  &  &  \\ \cline{2-6}
+ & 10 & \fillrow &  &  &  \\ \cline{2-6}
+ & 20 & \fillrow &  &  &  \\ \cline{2-6}
+ & 40 & \fillrow &  &  &  \\ \cline{2-6}
+ & 100 & \fillrow &  &  &  \\ \hline
+\multirow{6}{*}{\parbox{2.3cm}{\centering (2)\\loop increments}} & 1 & \fillrow &  &  &  \\ \cline{2-6}
+ & 5 & \fillrow &  &  &  \\ \cline{2-6}
+ & 10 & \fillrow &  &  &  \\ \cline{2-6}
+ & 20 & \fillrow &  &  &  \\ \cline{2-6}
+ & 40 & \fillrow &  &  &  \\ \cline{2-6}
+ & 100 & \fillrow &  &  &  \\ \hline
+\multirow{6}{*}{\parbox{2.3cm}{\centering (3)\\assignments}} & 1 & \fillrow &  &  &  \\ \cline{2-6}
+ & 5 & \fillrow &  &  &  \\ \cline{2-6}
+ & 10 & \fillrow &  &  &  \\ \cline{2-6}
+ & 20 & \fillrow &  &  &  \\ \cline{2-6}
+ & 40 & \fillrow &  &  &  \\ \cline{2-6}
+ & 100 & \fillrow &  &  &  \\ \hline
+\multirow{6}{*}{\parbox{2.3cm}{\centering (4)\\assignments}} & 1 & \fillrow &  &  &  \\ \cline{2-6}
+ & 5 & \fillrow &  &  &  \\ \cline{2-6}
+ & 10 & \fillrow &  &  &  \\ \cline{2-6}
+ & 20 & \fillrow &  &  &  \\ \cline{2-6}
+ & 40 & \fillrow &  &  &  \\ \cline{2-6}
+ & 100 & \fillrow &  &  &  \\ \hline
+\end{longtable}
+
+% ---------------------------------------------------------------------
+% TABLE 4: Exact count verification, average case
+% ---------------------------------------------------------------------
+\newpage
+\section*{Table 4: Exact Count Verification (Average Case)}
+
+For each case (1)--(4) and each $n$ below, run your algorithm on at
+least 1000 random inputs generated with the probabilities of your
+variant, and enter the mean of the counted values together with the
+value given by your $A(n)$ formula. Comment on the difference in your
+report.
+
+\noindent Number of random inputs used for each $n$ ($N\ge 1000$): \underline{\hspace{3cm}}
+
+\begin{center}
+\begin{longtable}{|C{2.3cm}|C{1.2cm}|C{3.4cm}|C{3.0cm}|C{2.8cm}|}
+\hline
+\textbf{Basic operation} & $\boldsymbol{n}$ & \textbf{Mean of counted values} & \textbf{Formula $A(n)$} & \textbf{Difference} \\ \hline
+\endhead
+\hline
+\endfoot
+\multirow{3}{*}{\parbox{2.3cm}{\centering (1)\\comparisons}} & 10 & \fillrow &  &  \\ \cline{2-5}
+ & 40 & \fillrow &  &  \\ \cline{2-5}
+ & 100 & \fillrow &  &  \\ \hline
+\multirow{3}{*}{\parbox{2.3cm}{\centering (2)\\loop increments}} & 10 & \fillrow &  &  \\ \cline{2-5}
+ & 40 & \fillrow &  &  \\ \cline{2-5}
+ & 100 & \fillrow &  &  \\ \hline
+\multirow{3}{*}{\parbox{2.3cm}{\centering (3)\\assignments}} & 10 & \fillrow &  &  \\ \cline{2-5}
+ & 40 & \fillrow &  &  \\ \cline{2-5}
+ & 100 & \fillrow &  &  \\ \hline
+\multirow{3}{*}{\parbox{2.3cm}{\centering (4)\\assignments}} & 10 & \fillrow &  &  \\ \cline{2-5}
+ & 40 & \fillrow &  &  \\ \cline{2-5}
+ & 100 & \fillrow &  &  \\ \hline
+\end{longtable}
+\end{center}
+
+\end{document}

@@ -1,0 +1,31 @@
+\begin{longtable}{|C{2.3cm}|C{1.2cm}|C{2.6cm}|C{2.6cm}|C{2.6cm}|C{2.6cm}|}
+\hline
+\textbf{Basic operation} & $\boldsymbol{n}$ & \textbf{Counted best} & \textbf{Formula $B(n)$} & \textbf{Counted worst} & \textbf{Formula $W(n)$} \\ \hline
+\endhead
+\hline
+\endfoot
+\multirow{6}{*}{\parbox{2.3cm}{\centering (1)\\comparisons}} & 1 & \fillrow 1 & 1 & 2 & 2 \\ \cline{2-6}
+ & 5 & \fillrow 5 & 5 & 10 & 10 \\ \cline{2-6}
+ & 10 & \fillrow 10 & 10 & 20 & 20 \\ \cline{2-6}
+ & 20 & \fillrow 20 & 20 & 40 & 40 \\ \cline{2-6}
+ & 40 & \fillrow 40 & 40 & 80 & 80 \\ \cline{2-6}
+ & 100 & \fillrow 100 & 100 & 200 & 200 \\ \hline
+\multirow{6}{*}{\parbox{2.3cm}{\centering (2)\\loop increments}} & 1 & \fillrow 0 & 0 & 1 & 1 \\ \cline{2-6}
+ & 5 & \fillrow 0 & 0 & 15 & 15 \\ \cline{2-6}
+ & 10 & \fillrow 0 & 0 & 55 & 55 \\ \cline{2-6}
+ & 20 & \fillrow 0 & 0 & 210 & 210 \\ \cline{2-6}
+ & 40 & \fillrow 0 & 0 & 820 & 820 \\ \cline{2-6}
+ & 100 & \fillrow 0 & 0 & 5050 & 5050 \\ \hline
+\multirow{6}{*}{\parbox{2.3cm}{\centering (3)\\assignments}} & 1 & \fillrow 1 & 1 & 1 & 1 \\ \cline{2-6}
+ & 5 & \fillrow 5 & 5 & 11 & 11 \\ \cline{2-6}
+ & 10 & \fillrow 10 & 10 & 35 & 35 \\ \cline{2-6}
+ & 20 & \fillrow 20 & 20 & 120 & 120 \\ \cline{2-6}
+ & 40 & \fillrow 40 & 40 & 440 & 440 \\ \cline{2-6}
+ & 100 & \fillrow 100 & 100 & 2600 & 2600 \\ \hline
+\multirow{6}{*}{\parbox{2.3cm}{\centering (4)\\assignments}} & 1 & \fillrow 1 & 1 & 1 & 1 \\ \cline{2-6}
+ & 5 & \fillrow 12 & 12 & 51 & 51 \\ \cline{2-6}
+ & 10 & \fillrow 34 & 34 & 320 & 320 \\ \cline{2-6}
+ & 20 & \fillrow 90 & 90 & 2250 & 2250 \\ \cline{2-6}
+ & 40 & \fillrow 225 & 225 & 16920 & 16920 \\ \cline{2-6}
+ & 100 & \fillrow 679 & 679 & 255350 & 255350 \\ \hline
+\end{longtable}

@@ -1,0 +1,23 @@
+\begin{longtable}{|C{2.3cm}|C{1.5cm}|p{7.2cm}|C{3.0cm}|}
+\hline
+\textbf{Basic operation} & \textbf{Case} & \centering\arraybackslash\textbf{Exact count (closed form)} & \textbf{Asymptotic} \\ \hline
+\endhead
+\hline
+\endfoot
+% --- Case 1 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (1)\\comparisons}} & $B_1(n)$ & \fillcell $\displaystyle n$ & $\Theta(n)$ \\ \cline{2-4}
+ & $W_1(n)$ & \fillcell $\displaystyle 2n$ & $\Theta(n)$ \\ \cline{2-4}
+ & $A_1(n)$ & \fillcell $\displaystyle \frac{8n}{5}$ & $\Theta(n)$ \\ \hline
+% --- Case 2 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (2)\\loop increments}} & $B_2(n)$ & \fillcell $\displaystyle 0$ & $O(1)\ (\text{constant } 0)$ \\ \cline{2-4}
+ & $W_2(n)$ & \fillcell $\displaystyle \frac{n(n+1)}{2}$ & $\Theta(n^2)$ \\ \cline{2-4}
+ & $A_2(n)$ & \fillcell $\displaystyle \frac{n^2}{10}+\frac{13n}{10}-4+4\left(\frac{4}{5}\right)^{n}$ & $\Theta(n^2)$ \\ \hline
+% --- Case 3 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (3)\\assignments}} & $B_3(n)$ & \fillcell $\displaystyle n$ & $\Theta(n)$ \\ \cline{2-4}
+ & $W_3(n)$ & \fillcell $\displaystyle n+\left\lfloor \frac{n^2}{4}\right\rfloor$ & $\Theta(n^2)$ \\ \cline{2-4}
+ & $A_3(n)$ & \fillcell $\displaystyle \frac{9n}{5}-4+4\left(\frac{4}{5}\right)^{n}$ & $\Theta(n)$ \\ \hline
+% --- Case 4 ---
+\multirow{3}{*}{\parbox{2.3cm}{\centering (4)\\assignments}} & $B_4(n)$ & \fillcell $\displaystyle n\lambda-\frac{\lambda(\lambda-1)}{2},\ \ \lambda=\lfloor \log_2 n\rfloor+1$ & $\Theta(n\log n)$ \\ \cline{2-4}
+ & $W_4(n)$ & \fillcell $\displaystyle n\left\lfloor \frac{n^2}{4}\right\rfloor+n\left\lceil \frac{n}{2}\right\rceil+\left\lfloor \frac{n}{2}\right\rfloor\left(\lfloor \log_2 n\rfloor+1\right)$ & $\Theta(n^3)$ \\ \cline{2-4}
+ & $A_4(n)$ & \fillcell $\displaystyle \frac{13n^2}{10}-\frac{39n}{10}+\frac{2n}{5}\left(\lfloor \log_2 n\rfloor+1\right)+4n\left(\frac{4}{5}\right)^{n}$ & $\Theta(n^2)$ \\ \hline
+\end{longtable}

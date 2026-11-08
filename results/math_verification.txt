@@ -1,0 +1,32 @@
+== 1. Exhaustive enumeration (reference interpreter) ==
+n= 1  min=[1, 0, 1, 1]  max=[2, 1, 1, 1]  E=['8/5', '3/5', '1', '1']
+n= 2  min=[2, 0, 2, 3]  max=[4, 3, 3, 6]  E=['16/5', '39/25', '54/25', '103/25']
+n= 3  min=[3, 0, 3, 5]  max=[6, 6, 5, 14]  E=['24/5', '356/125', '431/125', '1068/125']
+n= 4  min=[4, 0, 4, 9]  max=[8, 10, 8, 30]  E=['32/5', '2774/625', '3024/625', '10346/625']
+n= 5  min=[5, 0, 5, 12]  max=[10, 15, 11, 51]  E=['8', '19721/3125', '19721/3125', '15971/625']
+n= 6  min=[6, 0, 6, 15]  max=[12, 21, 15, 81]  E=['48/5', '132009/15625', '122634/15625', '576429/15625']
+n= 7  min=[7, 0, 7, 18]  max=[14, 28, 19, 121]  E=['56/5', '846786/78125', '737411/78125', '3958752/78125']
+n= 8  min=[8, 0, 8, 26]  max=[16, 36, 24, 176]  E=['64/5', '5262144/390625', '4324644/390625', '27409652/390625']
+n= 9  min=[9, 0, 9, 30]  max=[18, 45, 29, 241]  E=['72/5', '31907951/1953125', '24876701/1953125', '174671559/1953125']
+n=10  min=[10, 0, 10, 34]  max=[20, 55, 35, 320]
+== 2a. Per-character cost model vs interpreter on random strings (n up to 60) ==
+checked 300 random strings
+== 2b. DP optimum over all 3^n strings, n = 1..120 ==
+all B/W formulas equal the DP optimum for n = 1..120
+== 3. Exact expectation via distribution of s ==
+A1..A4 equal the exact expectation for n = 1..40, 50, 60, 80, 100, 150
+== 4. sympy symbolic checks ==
+E[s_i] indicator sum == closed form: True
+E[s_i] satisfies E[s_{i+1}] = (1-p_c)E[s_i] + p_a, E[s_0]=0: True
+A1(n) general = n*(p_a + 2*p_b + 2*p_c) ;  variant simplified matches: True
+A2(n) general = (n*p_c**3*(1 - n)/2 + n*p_c*(p_a*p_b + p_c*(n*p_c + p_b)) + p_a*p_b*((1 - p_c)**n - 1))/p_c**2 ;  variant simplified matches: True
+A3(n) general = (n*p_c*(p_a*p_b + p_c*(p_a + p_b + p_c)) + p_a*p_b*((1 - p_c)**n - 1))/p_c**2 ;  variant simplified matches: True
+A4(n) general = n*(2*p_a*p_b*((1 - p_c)**n - 1) + p_c**3*(1 - n) + 2*p_c*(n*p_a*p_b + p_c*(lambda*p_a + n*p_b + n*p_c)))/(2*p_c**2) ;  variant simplified matches: True
+limit A1/n = 8/5
+limit A2/n^2 = 1/10
+limit A3/n = 9/5
+limit A4/n^2 (lambda~log2 n) = 13/10
+limit W4/n^3 (n even) = 1/4
+limit B4/(n log2 n) = 1
+
+FAILURES: 0

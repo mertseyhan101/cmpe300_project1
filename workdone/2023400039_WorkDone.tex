@@ -1,0 +1,36 @@
+\input{preamble.tex}
+\begin{document}
+\draftbanner
+I worked on the following parts in this project:
+
+\textbf{Enes Ersoy (2023400039) -- CMPE 300 Project 1, variant key 4}
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{The \texttt{while} loop and the variable $s$.} I proved Lemma 1 (line 7 runs
+$\lambda=\lfloor\log_2 n\rfloor+1$ times and $\lambda\le n$) and Lemma 2 (what $s$ counts), and made the per-iteration
+cost table of Section 3.3 together with the pair-counting identity $\sum_{\texttt{b}}(s_i+1)=n_b+P$.
+\item \textbf{Theoretical analysis of group (3).} I derived $\tau_3=n+P$, $B_3(n)=n$, and
+$W_3(n)=n+\lfloor n^2/4\rfloor$ with worst input $\texttt{a}^{\lfloor n/2\rfloor}\texttt{b}^{\lceil n/2\rceil}$, using
+$P\le n_an_b$ and the maximisation of $x(n-x)$; and $A_3(n)=\frac{9n}{5}-4+4(\frac45)^n$ with its $\Theta(n)$ bounds
+(Section 6).
+\item \textbf{Theoretical analysis of group (4).} I proved the per-iteration lower bound
+$\tau_{4,i}\ge\min(\lambda,n-i)$, which gives $B_4(n)=n\lambda-\lambda(\lambda-1)/2$ with the input
+$\texttt{a}^{n-\lambda}\texttt{c}^{\lambda}$; the upper bound $\tau_4\le f(x)=\lambda x+n(n-x)(x+1)$ and its
+maximisation through $f(x+1)-f(x)=\lambda+n(n-2x-2)$, which gives $W_4(n)$ and the input
+$\texttt{a}^{\lfloor n/2\rfloor}\texttt{b}^{\lceil n/2\rceil}$; and $A_4(n)$ with the $\Theta(n\log n)$, $\Theta(n^3)$
+and $\Theta(n^2)$ bounds (Section 7). I filled Table 1.
+\item \textbf{Independent verification of the formulas.} I wrote the separate pseudocode interpreter (loops expanded
+into \texttt{while} form, counts per line), the exhaustive check over all $3^n$ inputs for $n\le10$, the dynamic
+programs over $(i,s)$ for the exact optimum ($n\le120$) and the exact expectation, and the \texttt{sympy} check
+(Section 8.1).
+\item \textbf{Exact count verification.} I ran the best/worst inputs of every group for
+$n\in\{1,5,10,20,40,100\}$ (Table 3) and 1000 random inputs for $n\in\{10,40,100\}$ (Table 4), computed the
+standard errors and wrote the comment on the differences (Section 11).
+\item \textbf{Graphs and comparison.} I made the five figures from the result files and wrote Section 12: the comments
+on all twelve analyses, the comparison of the average and worst case, and the discussion of small inputs and noise.
+\item \textbf{Tests.} I wrote the exhaustive tests against the interpreter and the tests of the formulas and of the
+random input distribution.
+\item \textbf{Cross-checking.} \fillin{which parts of Mert's work (e.g.\ the derivation of $\E[S_i]$ and $A_2(n)$)
+you checked, and how}. I read the final report.
+\end{enumerate}
+\end{document}

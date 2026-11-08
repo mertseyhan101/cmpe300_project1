@@ -1,0 +1,37 @@
+\input{preamble.tex}
+\begin{document}
+\draftbanner
+I worked on the following parts in this project:
+
+\textbf{Mert Seyhan (2023400213) -- CMPE 300 Project 1, variant key 4}
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Reading the algorithm and the counting conventions.} I fixed how the marked statements are counted:
+a comparison is counted each time it is evaluated (line 8 only when line 3 is false), and a \texttt{for} loop is
+expanded into its \texttt{while} form, so the loop on line 9 makes $s+1$ increments and the loop on line 15 makes
+$n-i$ increments. I computed the variant key $4$ ($p_a=p_b=2/5$, $p_c=1/5$, $d=2$) and wrote Section 2 of the report.
+\item \textbf{Theoretical analysis of group (1).} I derived $\tau_1=2n-n_a$ and from it $B_1(n)=n$ (input
+$\texttt{a}^n$), $W_1(n)=2n$ (input $\texttt{b}^n$) and $A_1(n)=8n/5$, with the per-iteration proofs and the
+$\Theta(n)$ bounds (Section 4).
+\item \textbf{Theoretical analysis of group (2).} I proved $B_2(n)=0$ and $W_2(n)=n(n+1)/2$ with worst input
+$\texttt{c}^n$, using the pair-counting bound $P\le\sum_{arr[j]=\texttt{a}}(n-1-j)$ to show that no input with
+\texttt{a}'s and \texttt{b}'s can beat $\texttt{c}^n$. I derived $\E[S_i]=2(1-(4/5)^i)$ from the recurrence
+$e_{i+1}=\frac45e_i+\frac25$ (backward substitution), its sum, and $A_2(n)=\frac{n^2}{10}+\frac{13n}{10}-4+4(\frac45)^n$
+with the $\Theta(n^2)$ constants (Section 5). The $\E[S_i]$ result is also used for $A_3$ and $A_4$.
+\item \textbf{Python implementation (\texttt{2023400213.py}).} I wrote the timing version of the algorithm without
+counters, the counted version with the four counters, the random input generator, the best/worst input generators of
+group (4), and the command-line interface (normal mode and \texttt{--count} mode, argument checks, exact output
+format).
+\item \textbf{Timing infrastructure and Table 2.} I wrote the timing function (\texttt{perf\_counter}, garbage
+collector off, repetition until 20\,ms, minimum of 3 rounds), ran the 45 measurements with 10 random runs per average,
+recorded the machine information, and filled Table 2. I noticed the noisy first run and documented why the 3-round
+rule was introduced (Section 10).
+\item \textbf{Choice of the basic operation.} I wrote Section 9.2: the argument that group (4) counts the bodies of
+all innermost loops, the measured time per operation of each group, and Table A1 with the extreme inputs of every
+group at $n=400$.
+\item \textbf{Tests.} I wrote the tests for the variant, the command-line interface (subprocess tests of both modes and
+of wrong arguments) and the timing code.
+\item \textbf{Cross-checking.} \fillin{which parts of Enes's work (e.g.\ the derivations of $W_3(n)$ and $W_4(n)$)
+you checked, and how}. I read the final report.
+\end{enumerate}
+\end{document}

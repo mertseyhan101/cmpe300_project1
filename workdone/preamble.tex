@@ -1,0 +1,18 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{xcolor,enumitem,amsmath}
+\newcommand{\E}{\mathrm{E}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlength{\emergencystretch}{2em}
+% Set to \draftfalse ONLY after the student has confirmed (and edited) the text below.
+\newif\ifdraft
+\input{status.tex}
+\newcommand{\draftbanner}{\ifdraft\noindent\fcolorbox{red}{red!8}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\color{red!70!black}\small
+\textbf{DRAFT -- REQUIRES STUDENT CONFIRMATION.} This text describes the proposed division of work. The student must
+check every item, change it so that it describes what they actually did (including, where relevant, which parts were
+prepared with the help of an AI assistant), fill in every red placeholder, and then switch off this banner
+(\texttt{workdone/status.tex}) before submission.}}\par\bigskip\fi}
+
+% Placeholder for text only the student can write; package.sh refuses final packaging while one remains.
+\newcommand{\fillin}[1]{\textcolor{red}{[STUDENT TO FILL IN: #1]}}

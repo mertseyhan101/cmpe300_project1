@@ -1,0 +1,23 @@
+\noindent Number of random inputs used for each $n$ ($N\ge 1000$): \underline{\hspace{1cm}1000\hspace{1cm}}
+
+\begin{center}
+\begin{longtable}{|C{2.3cm}|C{1.2cm}|C{3.4cm}|C{3.0cm}|C{2.8cm}|}
+\hline
+\textbf{Basic operation} & $\boldsymbol{n}$ & \textbf{Mean of counted values} & \textbf{Formula $A(n)$} & \textbf{Difference} \\ \hline
+\endhead
+\hline
+\endfoot
+\multirow{3}{*}{\parbox{2.3cm}{\centering (1)\\comparisons}} & 10 & \fillrow 16.040 & 16.0000 & +0.040 \\ \cline{2-5}
+ & 40 & \fillrow 64.072 & 64.0000 & +0.072 \\ \cline{2-5}
+ & 100 & \fillrow 160.045 & 160.0000 & +0.045 \\ \hline
+\multirow{3}{*}{\parbox{2.3cm}{\centering (2)\\loop increments}} & 10 & \fillrow 19.485 & 19.4295 & +0.056 \\ \cline{2-5}
+ & 40 & \fillrow 208.354 & 208.0005 & +0.353 \\ \cline{2-5}
+ & 100 & \fillrow 1135.566 & 1126.0000 & +9.566 \\ \hline
+\multirow{3}{*}{\parbox{2.3cm}{\centering (3)\\assignments}} & 10 & \fillrow 14.398 & 14.4295 & -0.031 \\ \cline{2-5}
+ & 40 & \fillrow 67.065 & 68.0005 & -0.936 \\ \cline{2-5}
+ & 100 & \fillrow 176.102 & 176.0000 & +0.102 \\ \hline
+\multirow{3}{*}{\parbox{2.3cm}{\centering (4)\\assignments}} & 10 & \fillrow 111.546 & 111.2950 & +0.251 \\ \cline{2-5}
+ & 40 & \fillrow 1982.014 & 2020.0213 & -38.007 \\ \cline{2-5}
+ & 100 & \fillrow 12900.934 & 12890.0000 & +10.934 \\ \hline
+\end{longtable}
+\end{center}
